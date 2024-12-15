@@ -181,7 +181,7 @@ namespace MaterialSkin.Controls
 
             if (m.Msg == WM_PAINT && String.IsNullOrEmpty(Text) && !Focused)
             {
-                using (NativeTextRenderer NativeText = new NativeTextRenderer(Graphics.FromHwnd(m.HWnd)))
+                using (NativeTextRenderer NativeText = new(Graphics.FromHwnd(m.HWnd)))
                 {
                     NativeText.DrawTransparentText(
                     Hint,

@@ -56,27 +56,29 @@
             }
 
             // create and save font handles for GDI
-            logicalFonts = new Dictionary<string, IntPtr>(18);
-            logicalFonts.Add("H1", createLogicalFont("Roboto Light", 96, NativeTextRenderer.logFontWeight.FW_LIGHT));
-            logicalFonts.Add("H2", createLogicalFont("Roboto Light", 60, NativeTextRenderer.logFontWeight.FW_LIGHT));
-            logicalFonts.Add("H3", createLogicalFont("Roboto", 48, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("H4", createLogicalFont("Roboto", 34, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("H5", createLogicalFont("Roboto", 24, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("H6", createLogicalFont("Roboto Medium", 20, NativeTextRenderer.logFontWeight.FW_MEDIUM));
-            logicalFonts.Add("Subtitle1", createLogicalFont("Roboto", 16, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("Subtitle2", createLogicalFont("Roboto Medium", 14, NativeTextRenderer.logFontWeight.FW_MEDIUM));
-            logicalFonts.Add("SubtleEmphasis", createLogicalFont("Roboto", 12, NativeTextRenderer.logFontWeight.FW_NORMAL, 1));
-            logicalFonts.Add("Body1", createLogicalFont("Roboto", 16, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("Body2", createLogicalFont("Roboto", 14, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("Button", createLogicalFont("Roboto Medium", 14, NativeTextRenderer.logFontWeight.FW_MEDIUM));
-            logicalFonts.Add("Caption", createLogicalFont("Roboto", 12, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("Overline", createLogicalFont("Roboto", 10, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            // Logical fonts for textbox animation
-            logicalFonts.Add("textBox16", createLogicalFont("Roboto", 16, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("textBox15", createLogicalFont("Roboto", 15, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("textBox14", createLogicalFont("Roboto", 14, NativeTextRenderer.logFontWeight.FW_REGULAR));
-            logicalFonts.Add("textBox13", createLogicalFont("Roboto Medium", 13, NativeTextRenderer.logFontWeight.FW_MEDIUM));
-            logicalFonts.Add("textBox12", createLogicalFont("Roboto Medium", 12, NativeTextRenderer.logFontWeight.FW_MEDIUM));
+            logicalFonts = new Dictionary<string, IntPtr>(18)
+            {
+                { "H1", createLogicalFont("Roboto Light", 96, NativeTextRenderer.logFontWeight.FW_LIGHT) },
+                { "H2", createLogicalFont("Roboto Light", 60, NativeTextRenderer.logFontWeight.FW_LIGHT) },
+                { "H3", createLogicalFont("Roboto", 48, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "H4", createLogicalFont("Roboto", 34, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "H5", createLogicalFont("Roboto", 24, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "H6", createLogicalFont("Roboto Medium", 20, NativeTextRenderer.logFontWeight.FW_MEDIUM) },
+                { "Subtitle1", createLogicalFont("Roboto", 16, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "Subtitle2", createLogicalFont("Roboto Medium", 14, NativeTextRenderer.logFontWeight.FW_MEDIUM) },
+                { "SubtleEmphasis", createLogicalFont("Roboto", 12, NativeTextRenderer.logFontWeight.FW_NORMAL, 1) },
+                { "Body1", createLogicalFont("Roboto", 16, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "Body2", createLogicalFont("Roboto", 14, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "Button", createLogicalFont("Roboto Medium", 14, NativeTextRenderer.logFontWeight.FW_MEDIUM) },
+                { "Caption", createLogicalFont("Roboto", 12, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "Overline", createLogicalFont("Roboto", 10, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                // Logical fonts for textbox animation
+                { "textBox16", createLogicalFont("Roboto", 16, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "textBox15", createLogicalFont("Roboto", 15, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "textBox14", createLogicalFont("Roboto", 14, NativeTextRenderer.logFontWeight.FW_REGULAR) },
+                { "textBox13", createLogicalFont("Roboto Medium", 13, NativeTextRenderer.logFontWeight.FW_MEDIUM) },
+                { "textBox12", createLogicalFont("Roboto Medium", 12, NativeTextRenderer.logFontWeight.FW_MEDIUM) }
+            };
         }
 
         // Destructor
@@ -119,7 +121,8 @@
         public enum Themes : byte
         {
             LIGHT,
-            DARK
+            DARK,
+            TRION
         }
 
         // Text
@@ -176,22 +179,27 @@
         private static readonly Brush BACKGROUND_LIGHT_BRUSH = new SolidBrush(BACKGROUND_LIGHT);
         private static readonly Color BACKGROUND_DARK = Color.FromArgb(255, 80, 80, 80);
         private static readonly Brush BACKGROUND_DARK_BRUSH = new SolidBrush(BACKGROUND_DARK);
+
         private static readonly Color BACKGROUND_ALTERNATIVE_LIGHT = Color.FromArgb(10, 0, 0, 0);
         private static readonly Brush BACKGROUND_ALTERNATIVE_LIGHT_BRUSH = new SolidBrush(BACKGROUND_ALTERNATIVE_LIGHT);
         private static readonly Color BACKGROUND_ALTERNATIVE_DARK = Color.FromArgb(10, 255, 255, 255);
         private static readonly Brush BACKGROUND_ALTERNATIVE_DARK_BRUSH = new SolidBrush(BACKGROUND_ALTERNATIVE_DARK);
+
         private static readonly Color BACKGROUND_HOVER_LIGHT = Color.FromArgb(20, 0, 0, 0);
         private static readonly Brush BACKGROUND_HOVER_LIGHT_BRUSH = new SolidBrush(BACKGROUND_HOVER_LIGHT);
         private static readonly Color BACKGROUND_HOVER_DARK = Color.FromArgb(20, 255, 255, 255);
         private static readonly Brush BACKGROUND_HOVER_DARK_BRUSH = new SolidBrush(BACKGROUND_HOVER_DARK);
+
         private static readonly Color BACKGROUND_HOVER_RED = Color.FromArgb(255, 255, 0, 0);
         private static readonly Brush BACKGROUND_HOVER_RED_BRUSH = new SolidBrush(BACKGROUND_HOVER_RED);
         private static readonly Color BACKGROUND_DOWN_RED = Color.FromArgb(255, 255, 84, 54);
         private static readonly Brush BACKGROUND_DOWN_RED_BRUSH = new SolidBrush(BACKGROUND_DOWN_RED);
+
         private static readonly Color BACKGROUND_FOCUS_LIGHT = Color.FromArgb(30, 0, 0, 0);
         private static readonly Brush BACKGROUND_FOCUS_LIGHT_BRUSH = new SolidBrush(BACKGROUND_FOCUS_LIGHT);
         private static readonly Color BACKGROUND_FOCUS_DARK = Color.FromArgb(30, 255, 255, 255);
         private static readonly Brush BACKGROUND_FOCUS_DARK_BRUSH = new SolidBrush(BACKGROUND_FOCUS_DARK);
+
         private static readonly Color BACKGROUND_DISABLED_LIGHT = Color.FromArgb(25, 0, 0, 0);
         private static readonly Brush BACKGROUND_DISABLED_LIGHT_BRUSH = new SolidBrush(BACKGROUND_DISABLED_LIGHT);
         private static readonly Color BACKGROUND_DISABLED_DARK = Color.FromArgb(25, 255, 255, 255);
@@ -207,22 +215,56 @@
         private static readonly Color BACKDROP_LIGHT = Color.FromArgb(255, 242, 242, 242);
         private static readonly Brush BACKDROP_LIGHT_BRUSH = new SolidBrush(BACKGROUND_LIGHT);
         private static readonly Color BACKDROP_DARK = Color.FromArgb(255, 50, 50, 50);
-        private static readonly Brush BACKDROP_DARK_BRUSH = new SolidBrush(BACKGROUND_DARK);
+        private static readonly Brush BACKDROP_DARK_BRUSH = new SolidBrush(BACKDROP_DARK);
 
         //Other colors
         private static readonly Color CARD_BLACK = Color.FromArgb(255, 42, 42, 42);
         private static readonly Color CARD_WHITE = Color.White;
 
+        // TRION theme updates to match the Old Desing
+
+        // Text
+        private static readonly Color TEXT_HIGH_EMPHASIS_TRION = Color.FromArgb(222, 255, 255, 255); // Alpha 87%
+        private static readonly Brush TEXT_HIGH_EMPHASIS_TRION_BRUSH = new SolidBrush(TEXT_HIGH_EMPHASIS_DARK);
+
+        private static readonly Color TEXT_HIGH_EMPHASIS_TRION_NOALPHA = Color.FromArgb(255, 255, 255, 255); // Alpha 100%
+        private static readonly Brush TEXT_HIGH_EMPHASIS_TRION_NOALPHA_BRUSH = new SolidBrush(TEXT_HIGH_EMPHASIS_TRION);
+
+        private static readonly Color TEXT_MEDIUM_EMPHASIS_TRION = Color.FromArgb(153, 255, 255, 255); // Alpha 60%
+        private static readonly Brush TEXT_MEDIUM_EMPHASIS_TRION_BRUSH = new SolidBrush(TEXT_MEDIUM_EMPHASIS_TRION);
+
+        private static readonly Color TEXT_DISABLED_OR_HINT_TRION = Color.FromArgb(97, 255, 255, 255); // Alpha 38%
+        private static readonly Brush TEXT_DISABLED_OR_HINT_TRION_BRUSH = new SolidBrush(TEXT_DISABLED_OR_HINT_TRION);
+
+        // Generic back colors - for user controls
+        private static readonly Color BACKGROUND_TRION = Color.FromArgb(255, 34, 39, 46);
+        private static readonly Brush BACKGROUND_TRION_BRUSH = new SolidBrush(BACKGROUND_TRION);
+        private static readonly Color BACKGROUND_ALTERNATIVE_TRION = Color.FromArgb(10, 255, 255, 255);
+        private static readonly Brush BACKGROUND_ALTERNATIVE_TRION_BRUSH = new SolidBrush(BACKGROUND_ALTERNATIVE_TRION);
+        private static readonly Color BACKGROUND_HOVER_TRION = Color.FromArgb(20, 255, 255, 255);
+        private static readonly Brush BACKGROUND_HOVER_TRION_BRUSH = new SolidBrush(BACKGROUND_HOVER_TRION);
+        private static readonly Color BACKGROUND_FOCUS_TRION = Color.FromArgb(30, 255, 255, 255);
+        private static readonly Brush BACKGROUND_FOCUS_TRION_BRUSH = new SolidBrush(BACKGROUND_FOCUS_TRION);
+        private static readonly Color BACKGROUND_DISABLED_TRION = Color.FromArgb(25, 255, 255, 255);
+        private static readonly Brush BACKGROUND_DISABLED_TRION_BRUSH = new SolidBrush(BACKGROUND_DISABLED_TRION);
+
+        // Backdrop colors - for containers, like forms or panels
+        private static readonly Color BACKDROP_TRION = Color.FromArgb(255, 28, 33, 40);
+        private static readonly Brush BACKDROP_TRION_BRUSH = new SolidBrush(BACKDROP_TRION);
+
+        //Other colors
+        private static readonly Color CARD_TRION = Color.FromArgb(255, 34, 39, 46);
+
         // Getters - Using these makes handling the dark theme switching easier
         // Text
-        public Color TextHighEmphasisColor => Theme == Themes.LIGHT ? TEXT_HIGH_EMPHASIS_DARK : TEXT_HIGH_EMPHASIS_LIGHT;
-        public Brush TextHighEmphasisBrush => Theme == Themes.LIGHT ? TEXT_HIGH_EMPHASIS_DARK_BRUSH : TEXT_HIGH_EMPHASIS_LIGHT_BRUSH;
-        public Color TextHighEmphasisNoAlphaColor => Theme == Themes.LIGHT ? TEXT_HIGH_EMPHASIS_DARK_NOALPHA : TEXT_HIGH_EMPHASIS_LIGHT_NOALPHA;
-        public Brush TextHighEmphasisNoAlphaBrush => Theme == Themes.LIGHT ? TEXT_HIGH_EMPHASIS_DARK_NOALPHA_BRUSH : TEXT_HIGH_EMPHASIS_LIGHT_NOALPHA_BRUSH;
-        public Color TextMediumEmphasisColor => Theme == Themes.LIGHT ? TEXT_MEDIUM_EMPHASIS_DARK : TEXT_MEDIUM_EMPHASIS_LIGHT;
-        public Brush TextMediumEmphasisBrush => Theme == Themes.LIGHT ? TEXT_MEDIUM_EMPHASIS_DARK_BRUSH : TEXT_MEDIUM_EMPHASIS_LIGHT_BRUSH;
-        public Color TextDisabledOrHintColor => Theme == Themes.LIGHT ? TEXT_DISABLED_OR_HINT_DARK : TEXT_DISABLED_OR_HINT_LIGHT;
-        public Brush TextDisabledOrHintBrush => Theme == Themes.LIGHT ? TEXT_DISABLED_OR_HINT_DARK_BRUSH : TEXT_DISABLED_OR_HINT_LIGHT_BRUSH;
+        public Color TextHighEmphasisColor => Theme == Themes.LIGHT ? TEXT_HIGH_EMPHASIS_DARK : Theme == Themes.TRION ? TEXT_HIGH_EMPHASIS_TRION : TEXT_HIGH_EMPHASIS_LIGHT;
+        public Brush TextHighEmphasisBrush => Theme == Themes.LIGHT ? TEXT_HIGH_EMPHASIS_DARK_BRUSH : Theme == Themes.TRION ? TEXT_HIGH_EMPHASIS_TRION_BRUSH : TEXT_HIGH_EMPHASIS_LIGHT_BRUSH;
+        public Color TextHighEmphasisNoAlphaColor => Theme == Themes.LIGHT ? TEXT_HIGH_EMPHASIS_DARK_NOALPHA : Theme == Themes.TRION ? TEXT_HIGH_EMPHASIS_TRION_NOALPHA : TEXT_HIGH_EMPHASIS_LIGHT_NOALPHA;
+        public Brush TextHighEmphasisNoAlphaBrush => Theme == Themes.LIGHT ? TEXT_HIGH_EMPHASIS_DARK_NOALPHA_BRUSH : Theme == Themes.TRION ? TEXT_HIGH_EMPHASIS_TRION_NOALPHA_BRUSH : TEXT_HIGH_EMPHASIS_LIGHT_NOALPHA_BRUSH;
+        public Color TextMediumEmphasisColor => Theme == Themes.LIGHT ? TEXT_MEDIUM_EMPHASIS_DARK : Theme == Themes.TRION ? TEXT_MEDIUM_EMPHASIS_TRION : TEXT_MEDIUM_EMPHASIS_LIGHT;
+        public Brush TextMediumEmphasisBrush => Theme == Themes.LIGHT ? TEXT_MEDIUM_EMPHASIS_DARK_BRUSH : Theme == Themes.TRION ? TEXT_MEDIUM_EMPHASIS_TRION_BRUSH : TEXT_MEDIUM_EMPHASIS_LIGHT_BRUSH;
+        public Color TextDisabledOrHintColor => Theme == Themes.LIGHT ? TEXT_DISABLED_OR_HINT_DARK : Theme == Themes.TRION ? TEXT_DISABLED_OR_HINT_TRION : TEXT_DISABLED_OR_HINT_LIGHT;
+        public Brush TextDisabledOrHintBrush => Theme == Themes.LIGHT ? TEXT_DISABLED_OR_HINT_DARK_BRUSH : Theme == Themes.TRION ? TEXT_DISABLED_OR_HINT_TRION_BRUSH : TEXT_DISABLED_OR_HINT_LIGHT_BRUSH;
 
         // Divider
         public Color DividersColor => Theme == Themes.LIGHT ? DIVIDERS_DARK : DIVIDERS_LIGHT;
@@ -243,23 +285,23 @@
         public Color SwitchOffDisabledThumbColor => Theme == Themes.LIGHT ? SWITCH_OFF_DISABLED_THUMB_LIGHT : SWITCH_OFF_DISABLED_THUMB_DARK;
 
         // Control Back colors
-        public Color BackgroundColor => Theme == Themes.LIGHT ? BACKGROUND_LIGHT : BACKGROUND_DARK;
-        public Brush BackgroundBrush => Theme == Themes.LIGHT ? BACKGROUND_LIGHT_BRUSH : BACKGROUND_DARK_BRUSH;
-        public Color BackgroundAlternativeColor => Theme == Themes.LIGHT ? BACKGROUND_ALTERNATIVE_LIGHT : BACKGROUND_ALTERNATIVE_DARK;
-        public Brush BackgroundAlternativeBrush => Theme == Themes.LIGHT ? BACKGROUND_ALTERNATIVE_LIGHT_BRUSH : BACKGROUND_ALTERNATIVE_DARK_BRUSH;
-        public Color BackgroundDisabledColor => Theme == Themes.LIGHT ? BACKGROUND_DISABLED_LIGHT : BACKGROUND_DISABLED_DARK;
-        public Brush BackgroundDisabledBrush => Theme == Themes.LIGHT ? BACKGROUND_DISABLED_LIGHT_BRUSH : BACKGROUND_DISABLED_DARK_BRUSH;
-        public Color BackgroundHoverColor => Theme == Themes.LIGHT ? BACKGROUND_HOVER_LIGHT : BACKGROUND_HOVER_DARK;
-        public Brush BackgroundHoverBrush => Theme == Themes.LIGHT ? BACKGROUND_HOVER_LIGHT_BRUSH : BACKGROUND_HOVER_DARK_BRUSH;
+        public Color BackgroundColor => Theme == Themes.LIGHT ? BACKGROUND_LIGHT : Theme == Themes.TRION ? BACKGROUND_TRION : BACKGROUND_DARK;
+        public Brush BackgroundBrush => Theme == Themes.LIGHT ? BACKGROUND_LIGHT_BRUSH : Theme == Themes.TRION ? BACKGROUND_TRION_BRUSH : BACKGROUND_DARK_BRUSH;
+        public Color BackgroundAlternativeColor => Theme == Themes.LIGHT ? BACKGROUND_ALTERNATIVE_LIGHT : Theme == Themes.TRION ? BACKGROUND_ALTERNATIVE_TRION : BACKGROUND_ALTERNATIVE_DARK;
+        public Brush BackgroundAlternativeBrush => Theme == Themes.LIGHT ? BACKGROUND_ALTERNATIVE_LIGHT_BRUSH : Theme == Themes.TRION ? BACKGROUND_ALTERNATIVE_TRION_BRUSH : BACKGROUND_ALTERNATIVE_DARK_BRUSH;
+        public Color BackgroundDisabledColor => Theme == Themes.LIGHT ? BACKGROUND_DISABLED_LIGHT : Theme == Themes.TRION ? BACKGROUND_DISABLED_TRION: BACKGROUND_DISABLED_DARK;
+        public Brush BackgroundDisabledBrush => Theme == Themes.LIGHT ? BACKGROUND_DISABLED_LIGHT_BRUSH : Theme == Themes.TRION ? BACKGROUND_DISABLED_TRION_BRUSH : BACKGROUND_DISABLED_DARK_BRUSH;
+        public Color BackgroundHoverColor => Theme == Themes.LIGHT ? BACKGROUND_HOVER_LIGHT : Theme == Themes.TRION ? BACKGROUND_HOVER_TRION : BACKGROUND_HOVER_DARK;
+        public Brush BackgroundHoverBrush => Theme == Themes.LIGHT ? BACKGROUND_HOVER_LIGHT_BRUSH : Theme == Themes.TRION ? BACKGROUND_HOVER_TRION_BRUSH : BACKGROUND_HOVER_DARK_BRUSH;
         public Color BackgroundHoverRedColor => Theme == Themes.LIGHT ? BACKGROUND_HOVER_RED : BACKGROUND_HOVER_RED;
         public Brush BackgroundHoverRedBrush => Theme == Themes.LIGHT ? BACKGROUND_HOVER_RED_BRUSH : BACKGROUND_HOVER_RED_BRUSH;
         public Brush BackgroundDownRedBrush => Theme == Themes.LIGHT ? BACKGROUND_DOWN_RED_BRUSH : BACKGROUND_DOWN_RED_BRUSH;
-        public Color BackgroundFocusColor => Theme == Themes.LIGHT ? BACKGROUND_FOCUS_LIGHT : BACKGROUND_FOCUS_DARK;
-        public Brush BackgroundFocusBrush => Theme == Themes.LIGHT ? BACKGROUND_FOCUS_LIGHT_BRUSH : BACKGROUND_FOCUS_DARK_BRUSH;
+        public Color BackgroundFocusColor => Theme == Themes.LIGHT ? BACKGROUND_FOCUS_LIGHT : Theme == Themes.TRION ? BACKGROUND_FOCUS_TRION : BACKGROUND_FOCUS_DARK;
+        public Brush BackgroundFocusBrush => Theme == Themes.LIGHT ? BACKGROUND_FOCUS_LIGHT_BRUSH : Theme == Themes.TRION ? BACKGROUND_FOCUS_TRION_BRUSH : BACKGROUND_FOCUS_DARK_BRUSH;
 
 
         // Other color
-        public Color CardsColor => Theme == Themes.LIGHT ? CARD_WHITE : CARD_BLACK;
+        public Color CardsColor => Theme == Themes.LIGHT ? CARD_WHITE : Theme == Themes.TRION ? CARD_TRION : CARD_BLACK;
 
         // Expansion Panel color/brush
         public Brush ExpansionPanelFocusBrush => Theme == Themes.LIGHT ? EXPANSIONPANEL_FOCUS_LIGHT_BRUSH : EXPANSIONPANEL_FOCUS_DARK_BRUSH;
@@ -270,8 +312,8 @@
         public Color SnackBarTextButtonNoAccentTextColor => Theme != Themes.LIGHT ? ColorScheme.PrimaryColor : ColorScheme.LightPrimaryColor;
 
         // Backdrop color
-        public Color BackdropColor => Theme == Themes.LIGHT ? BACKDROP_LIGHT : BACKDROP_DARK;
-        public Brush BackdropBrush => Theme == Themes.LIGHT ? BACKDROP_LIGHT_BRUSH : BACKDROP_DARK_BRUSH;
+        public Color BackdropColor => Theme == Themes.LIGHT ? BACKDROP_LIGHT : Theme == Themes.TRION ? BACKDROP_TRION : BACKDROP_DARK;
+        public Brush BackdropBrush => Theme == Themes.LIGHT ? BACKDROP_LIGHT_BRUSH : Theme == Themes.TRION ? BACKDROP_TRION_BRUSH : BACKDROP_DARK_BRUSH;
 
         // Font Handling
         public enum fontType

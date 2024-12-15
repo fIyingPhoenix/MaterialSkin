@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-		<TargetFrameworks>net5.0-windows;net48;net461</TargetFrameworks>
-		<RuntimeIdentifier>win</RuntimeIdentifier>
+		<TargetFramework>net8.0-windows10.0.17763.0</TargetFramework>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
       <OutputType>Library</OutputType>
       <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
 		<UseWindowsForms>true</UseWindowsForms>
@@ -9,7 +9,8 @@
       <AssemblyName>MaterialSkin</AssemblyName>
       <RootNamespace>$(AssemblyName)</RootNamespace>
       <PackageId>MaterialSkin.2</PackageId>
-      <Version>2.3.1</Version>
+      <Version>2.3.3</Version>
+      <NoWarn>$(NoWarn);CA1416</NoWarn>
       <Product>MaterialSkin 2</Product>
       <Authors>leocb, IgnaceMaes, orapps44</Authors>
       <PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -18,9 +19,10 @@
       <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
       <Description>Google's Material Design for your windows forms. MaterialSkin 2 is a Google's Material Design skin for you windows forms app. This updated version brings new user controls, unified theming and consistency. This package supersedes the MaterialSkin package By IgnaceMaes. Example app and documentation is available on the project site.</Description>
       <PackageReleaseNotes>See GitHub page for release notes.</PackageReleaseNotes>
-      <Copyright>Copyright Leonardo C Bottaro © 2021</Copyright>
+      <Copyright>Copyright Trion Control Panel © 2021</Copyright>
       <PackageTags>material design materialdesign google forms theme skin</PackageTags>
       <PackageReadmeFile>README.md</PackageReadmeFile>
+      <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 	<ItemGroup Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'">
 		<Reference Include="System.Design" />

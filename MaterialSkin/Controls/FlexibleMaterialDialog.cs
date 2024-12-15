@@ -91,7 +91,7 @@ namespace MaterialSkin.Controls
         {
             this.components = new System.ComponentModel.Container();
             this.FlexibleMaterialFormBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.messageContainer = new System.Windows.Forms.Panel();
+            this.messageContainer = new Panel();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.pictureBoxForIcon = new System.Windows.Forms.PictureBox();
             this.richTextBoxMessage = new MaterialSkin.Controls.MaterialMultiLineTextBox();
@@ -115,7 +115,7 @@ namespace MaterialSkin.Controls
             this.messageContainer.Location = new System.Drawing.Point(1, 65);
             this.messageContainer.Name = "messageContainer";
             this.messageContainer.Size = new System.Drawing.Size(382, 89);
-            this.messageContainer.TabIndex = 1;
+            messageContainer.TabIndex = 1;
             // 
             // materialLabel1
             // 
